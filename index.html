@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VADERPAY — FPX Bank Selection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="VADERPAY">
+      <img src="assets/payment_gateway/logo-vaderpay.svg" alt="VADERPAY">
+    </a>
+    <div class="session-pill" aria-label="Session time remaining">
+      <span class="session-dot"></span>
+      <span>Session expires in</span>
+      <strong id="timer">04:16</strong>
+    </div>
+  </header>
+
+  <div class="progress" aria-label="Payment progress">
+    <div class="progress-step active"><span>01</span><b>Payment Details</b></div>
+    <div class="progress-line"></div>
+    <div class="progress-step current"><span>02</span><b>Select Bank</b></div>
+    <div class="progress-line"></div>
+    <div class="progress-step"><span>03</span><b>Authorise</b></div>
+  </div>
+
+  <section class="layout">
+    <aside class="summary-card">
+      <div class="eyebrow"><img src="assets/payment_gateway/icn-secure_trusted.svg" alt=""> SECURE PAYMENT</div>
+      <h1>Payment Summary</h1>
+      <p class="summary-sub">Please review your payment details before proceeding.</p>
+
+      <div class="summary-row amount">
+        <span>Amount</span>
+        <strong>RM 100.00</strong>
+      </div>
+      <div class="summary-row">
+        <span>Transaction ID</span>
+        <strong class="transaction-value"><span id="transactionId">TXN20260910A182</span><button class="copy" id="copyBtn" type="button" aria-label="Copy transaction ID"><img src="assets/payment_gateway/copy-icon_white.svg" alt=""></button></strong>
+      </div>
+      <div class="summary-row">
+        <span>Created Date &amp; Time</span>
+        <strong>10 Sep 2026, 2:45 PM</strong>
+      </div>
+
+      <button class="important" id="importantBtn" type="button" aria-expanded="false">
+        <span class="important-title"><img src="assets/bank/green-info.svg" alt="">Important Notes</span>
+        <img class="dropdown-icon" src="assets/payment_gateway/icn-dropdown-w.svg" alt="">
+      </button>
+      <div class="important-content" id="importantContent" hidden>
+        <ul>
+          <li>Kindly ensure your bank account has been activated for online payment processing.</li>
+          <li>Ensure that you have sufficient funds in the account.</li>
+          <li>Please do not refresh your browser during the payment process.</li>
+          <li>Please do not click any submit button more than once.</li>
+        </ul>
+      </div>
+
+      <div class="secure-note">
+        <img src="assets/payment_gateway/icn-secure.svg" alt="">
+        <span>You will be redirected to your bank's secure site.</span>
+      </div>
+    </aside>
+
+    <section class="bank-card">
+      <div class="bank-head">
+        <div class="bank-icon"><img src="assets/payment_gateway/icn-bank-w.svg" alt=""></div>
+        <div>
+          <span class="kicker">FPX ONLINE BANKING</span>
+          <h2>Select your bank</h2>
+          <p>Choose your preferred bank to continue.</p>
+        </div>
+      </div>
+
+      <label class="search-box">
+          <img src="assets/payment_gateway/icn-search.svg" />
+        <input id="bankSearch" type="search" placeholder="Search bank" autocomplete="off" aria-label="Search bank">
+      </label>
+
+      <div class="bank-pages" id="bankPages"><div class="bank-grid" id="banks"></div></div>
+      <div class="bank-dots" id="bankDots" aria-label="Bank pages"></div>
+      <div class="empty-state" id="emptyState" hidden>No matching bank found.</div>
+
+      <div class="bank-footer">
+        <div class="selected-message" id="selectedMessage">Please select a bank to continue.</div>
+        <button class="continue-btn" id="continueBtn" type="button" disabled>
+          <span>Continue</span>
+          <img src="assets/payment_gateway/icn-arrow.svg" alt="">
+        </button>
+      </div>
+    </section>
+  </section>
+
+  <footer class="footer">
+    <span><img src="assets/payment_gateway/icn-lock.svg" alt=""> Secure &amp; encrypted payment</span>
+    <span>Powered by <img class="footer-logo" src="assets/payment_gateway/logo-vaderpay.svg" alt="VADERPAY"></span>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
