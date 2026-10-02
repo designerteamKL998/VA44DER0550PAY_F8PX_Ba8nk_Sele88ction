@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Select Wallet</title>
+<link rel="stylesheet" href="style-green.css">
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <img src="assets-wallet/logo-vaderpay.svg" class="vaderpay" alt="VaderPay">
+    <div class="timer"><img src="assets-wallet/icn-timer.svg" alt=""><strong id="timer">04:16</strong></div>
+  </header>
+
+  <!-- WALLET SELECTION -->
+  <section id="selectionView" class="selection-view">
+    <section class="wallet-card">
+      <div class="section-head">
+        <div class="section-icon"><img src="assets-wallet/icn-wallet.svg" alt=""></div>
+        <div><h1>Select Wallet</h1><p>Choose your preferred wallet to proceed with payment.</p></div>
+      </div>
+      <div class="wallet-grid" id="walletGrid"></div>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <aside class="summary-card">
+      <h2>Payment Summary</h2>
+      <p class="summary-sub">Please review your payment details before proceeding.</p>
+      <div class="summary-row amount"><span>Amount</span><strong>RM 100.00</strong></div>
+      <div class="summary-row"><span>Transaction No</span><strong>ZP26090904307570 <button class="copy" type="button"><img src="assets-wallet/copy-icon_white.svg" alt=""></button></strong></div>
+      <div class="summary-row"><span>Created Date &amp; Time</span><strong>10 Sep 2026, 2:45 PM</strong></div>
+      <div class="summary-row"><span>Order No</span><strong>249 MY06-252-26-672</strong></div>
+      <button class="important" id="importantBtn" type="button"><span class="important-left"><i class="info-icon">i</i><span>Important Notes</span></span><img class="dropdown-icon" src="assets-wallet/icn-dropdown-w.svg" alt=""></button>
+      <div class="important-content" id="importantContent"><ul><li>Kindly ensure your wallet account is active and ready for payment.</li><li>Kindly ensure you have sufficient funds.</li><li>Please do not refresh your browser.</li><li>Please do not click any submit button more than once.</li></ul></div>
+      <button class="proceed" id="proceed" type="button">Select a Wallet <img src="assets-wallet/icn-arrow.svg" alt=""></button>
+      <div class="redirect">♧ &nbsp; You will be redirected to your wallet's secure site.</div>
+    </aside>
+  </section>
+
+  <!-- QR VIEW -->
+  <section id="qrView" class="qr-view hidden">
+    <div class="qr-card">
+      <div class="wallet-brand" id="walletBrand"></div>
+      <div class="qr-layout">
+        <div class="qr-left">
+          <div class="qr-box"><img src="assets-wallet/QR.jpg" alt="Payment QR"></div>
+          <p>Kindly scan the QR code below to proceed with payment.<br>Do Not Refresh!</p>
+          <button class="cancel desktop-cancel" id="cancelDesktop">Cancel the transaction</button>
+        </div>
+        <div class="qr-right">
+          <div class="merchant"><img src="assets-wallet/icn-merchant.svg" alt=""><div><small>You are paying to</small><strong>YourBrand Sdn. Bhd.</strong></div></div>
+          <div class="qr-row"><span>Transaction No</span><strong>ZP26090904307570 <img src="assets-wallet/copy-icon_white.svg" alt=""></strong></div>
+          <div class="qr-row"><span>Created Date &amp; Time</span><strong>10 Sep 2026, 2:45 PM</strong></div>
+          <div class="qr-row"><span>Order No</span><strong>249 MY06-252-26-672</strong></div>
+          <div class="qr-row amount"><span>Amount</span><strong>RM 100.00</strong></div>
+          <div class="countdown"><img src="assets-wallet/icn-timer-green.svg" alt=""><div><small>Complete payment within</small><strong id="qrTimer">14:51 minutes</strong></div></div>
+          <button class="cancel mobile-cancel" id="cancelMobile">Cancel the transaction</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT UNSUCCESSFUL -->
+  <section id="failureView" class="failure-view hidden">
+    <div class="failure-card">
+      <div class="failure-brand" id="failureBrand"></div>
+
+      <div class="failure-icon-wrap" aria-label="Payment unsuccessful">
+        <div class="failure-ring ring-one"></div>
+        <div class="failure-ring ring-two"></div>
+        <div class="failure-icon">×</div>
+      </div>
+
+      <h1>Payment Unsuccessful</h1>
+      <p>Your transaction was declined or timed out during authorization.</p>
+
+      <button class="return-merchant" id="returnMerchant" type="button">
+        Return to Merchant
+      </button>
+    </div>
+  </section>
+</main>
+<script src="script-green.js"></script>
+</body>
+</html>
