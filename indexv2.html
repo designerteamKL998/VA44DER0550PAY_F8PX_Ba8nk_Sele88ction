@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VADERPAY — FPX Bank Selection</title>
+<link rel="stylesheet" href="stylev2.css">
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="VADERPAY"><img src="assets/payment_gateway/logo-vaderpay.svg" alt="VADERPAY"></a>
+    <div class="session-pill"><span class="session-dot"></span><span>Session expires in</span><strong id="timer">04:16</strong></div>
+  </header>
+
+  <section class="flow-shell" id="flowShell">
+    <!-- STATE 1: BANK SELECTION -->
+    <section class="bank-card state bank-state" id="bankState" aria-labelledby="bankTitle">
+      <div class="state-head">
+        <div class="bank-icon"><img src="assets/payment_gateway/icn-bank-w.svg" alt=""></div>
+        <div>
+          <span class="kicker">FPX ONLINE BANKING</span>
+          <h1 id="bankTitle">Select your bank</h1>
+          <p>Choose your preferred bank to continue.</p>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <label class="search-box">
+          <img src="assets/payment_gateway/icn-search.svg" alt="">
+          <input id="bankSearch" type="search" placeholder="Search bank" autocomplete="off" aria-label="Search bank">
+        </label>
+      </div>
+
+      <div class="bank-pages" id="bankPages">
+        <div class="bank-grid" id="banks"></div>
+      </div>
+      <div class="bank-dots" id="bankDots" aria-label="Bank pages"></div>
+      <div class="empty-state" id="emptyState" hidden>No matching bank found.</div>
+
+      <div class="bank-action">
+        <div class="selected-message" id="selectedMessage">Select a bank to continue.</div>
+        <button class="continue-btn" id="continueBtn" type="button" disabled>
+          <span id="continueLabel">Continue</span><img src="assets/payment_gateway/icn-arrow.svg" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!-- STATE 2: PAYMENT REVIEW -->
+    <section class="review-card state review-state" id="reviewState" aria-labelledby="reviewTitle" hidden>
+      <div class="review-top">
+        <button class="change-bank" id="changeBank" type="button"><span>←</span> Change bank</button>
+        <span class="secure-badge"><img src="assets/payment_gateway/icn-secure.svg" alt=""> SECURE PAYMENT</span>
+      </div>
+
+      <div class="review-heading">
+        <div class="review-icon"><img src="assets/payment_gateway/icn-bank-w.svg" alt=""></div>
+        <div>
+          <span class="kicker">FPX PAYMENT</span>
+          <h1 id="reviewTitle">Review your payment</h1>
+          <p>Please confirm your payment details before continuing.</p>
+        </div>
+      </div>
+
+      <div class="review-amount">
+        <span>Amount</span>
+        <strong>RM 100.00</strong>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-row"><span>Transaction ID</span><strong class="transaction-value"><span id="transactionId">TXN20260910A182</span><button class="copy" id="copyBtn" type="button" aria-label="Copy transaction ID"><img src="assets/payment_gateway/copy-icon_white.svg" alt=""></button></strong></div>
+        <div class="review-row"><span>Bank selected</span><strong class="selected-bank-value" id="reviewBank">CIMB Bank</strong></div>
+        <div class="review-row"><span>Created Date &amp; Time</span><strong>10 Sep 2026, 2:45 PM</strong></div>
+      </div>
+
+      <button class="important" id="importantBtn" type="button" aria-expanded="false">
+        <span class="important-title"><img src="assets/payment_gateway/icn-important.svg" alt="">Important Notes</span>
+        <img class="dropdown-icon" src="assets/payment_gateway/icn-dropdown-w.svg" alt="">
+      </button>
+      <div class="important-content" id="importantContent" hidden>
+        <ul>
+          <li>Kindly ensure your bank account has been activated for online payment processing.</li>
+          <li>Ensure that you have sufficient funds in the account.</li>
+          <li>Please do not refresh your browser during the payment process.</li>
+          <li>Please do not click any submit button more than once.</li>
+        </ul>
+      </div>
+
+      <div class="review-footer">
+        <div class="secure-note"><img src="assets/payment_gateway/icn-secure.svg" alt=""><span>You will be redirected to your bank's secure site.</span></div>
+        <button class="proceed-btn" id="proceedBtn" type="button"><span id="proceedLabel">Proceed to CIMB</span><img src="assets/payment_gateway/icn-arrow.svg" alt=""></button>
+      </div>
+    </section>
+  </section>
+
+  <footer class="footer">
+    <span><img src="assets/payment_gateway/icn-lock.svg" alt=""> Secure &amp; encrypted payment</span>
+    <span>Powered by <img class="footer-logo" src="assets/payment_gateway/logo-vaderpay.svg" alt="VADERPAY"></span>
+  </footer>
+</main>
+<script src="scriptv2.js"></script>
+</body>
+</html>
